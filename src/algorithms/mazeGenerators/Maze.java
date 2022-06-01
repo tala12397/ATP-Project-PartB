@@ -60,6 +60,21 @@ public class Maze {
         this.maze[endx][endy] = 0;
 
     }
+    public Maze(byte[] bytes){
+        int rows = bytes[0]*100 + bytes[1];
+        int col = bytes[2]*100 + bytes[3];
+        this.maze = new int[rows][col];
+        this.start = new Position((bytes[4]*100) + bytes[5], (bytes[6]*100) + bytes[7]);
+        this.end = new Position((bytes[8]*100)+bytes[9], (bytes[10]*100)+bytes[11]);
+        int index = 12;
+        for(int i = 0;i<rows;i++){
+            for(int j=0;j<col;j++){
+                this.maze[i][j] = bytes[index];
+                index++;
+            }
+        }
+
+    }
 
     /**
      * class constructor
@@ -137,6 +152,32 @@ public class Maze {
             }
 
         }
+    }
+    public byte[] toByteArray(){
+       byte[] bytes = new byte[(maze.length * maze[0].length)+12];
+       bytes[0] = (byte)(maze.length/100); //numofrows
+       bytes[1] = (byte)(maze.length%100);
+       bytes[2] =  (byte)(maze[0].length/100); //numofcols
+        bytes[3] = (byte)(maze[0].length%100);
+       bytes[4] = (byte)(start.getRowIndex()/100); //row start
+        bytes[5] = (byte)(start.getRowIndex()%100);
+       bytes[6] = (byte)(start.getColumnIndex()/100);
+        bytes[7] = (byte)(start.getColumnIndex()%100);// col start
+       bytes[8] = (byte)(end.getRowIndex()/100); // row end
+        bytes[9] = (byte)(end.getRowIndex()%100);
+       bytes[10] = (byte)(end.getColumnIndex()/100); // col end
+        bytes[11] = (byte)(end.getColumnIndex()%100);
+       int index = 12;
+       for(int i = 0; i<maze.length;i++){
+           for(int j=0; j<maze[0].length;j++){
+               bytes[index] =(byte)maze[i][j];
+               index++;
+           }
+       }
+       return bytes;
+
+
+
 
 
     }

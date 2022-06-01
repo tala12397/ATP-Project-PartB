@@ -20,5 +20,9 @@ public class Position {
         public String toString(){
             return "{"+this.rows+","+this.columns+"}";
         }
+        public void Set_Position(int r, int c){
+            this.rows = r;
+            this.columns = c;
+        }
 
 }
