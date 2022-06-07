@@ -2,7 +2,9 @@ package IO;
 
 import java.io.IOException;
 import java.io.InputStream;
-
+/**
+ * class which decompresses a maze according to hw algorithm
+ */
 public class SimpleDecompressorInputStream extends InputStream {
     InputStream in;
 

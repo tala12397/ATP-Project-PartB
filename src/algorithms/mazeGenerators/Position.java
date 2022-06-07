@@ -1,9 +1,11 @@
 package algorithms.mazeGenerators;
 
+import java.io.Serializable;
+
 /**
  * class which represent a cell in the maze
  */
-public class Position {
+public class Position implements Serializable {
         private int rows;
         private int columns;
 

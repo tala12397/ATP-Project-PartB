@@ -1,4 +1,5 @@
 package algorithms.mazeGenerators;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
@@ -6,7 +7,7 @@ import java.util.Stack;
 /**
  * class which generate a random maze
  */
-public class MyMazeGenerator extends AMazeGenerator {
+public class MyMazeGenerator extends AMazeGenerator implements Serializable {
 
     /**
      * generate the maze with creation function

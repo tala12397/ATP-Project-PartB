@@ -2,8 +2,10 @@ package IO;
 
 import java.io.IOException;
 import java.io.OutputStream;
-
-public class SimpleCompressorOutputStream extends OutputStream {
+/**
+ * class which compresses a maze according to hw algorithm
+ */
+public class SimpleCompressorOutputStream extends OutputStream  {
     private OutputStream out;
     public SimpleCompressorOutputStream(OutputStream os){
         this.out = os;

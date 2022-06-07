@@ -2,9 +2,12 @@ package IO;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.math.BigInteger;
-
-public class MyDecompressorInputStream extends InputStream {
+/**
+ * class which decompresses a maze according to my algorithm
+ */
+public class MyDecompressorInputStream extends InputStream  {
     InputStream in;
 
     public MyDecompressorInputStream(InputStream inpt){
@@ -23,7 +26,7 @@ public class MyDecompressorInputStream extends InputStream {
             s+=Integer.toString(bytes[i]);
         }
         BigInteger num = new BigInteger(s);
-        s = num.toString();
+        s = num.toString(2);
         String sub_s = "";
         for(int i=0;i<s.length();i++){
             sub_s = s.substring(i,i+1);

@@ -1,11 +1,12 @@
 package algorithms.mazeGenerators;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * the object maze itself
  */
-public class Maze {
+public class Maze implements Serializable {
     private int [][] maze;
     Position start;
     Position end;

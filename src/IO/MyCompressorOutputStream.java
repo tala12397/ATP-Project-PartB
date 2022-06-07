@@ -2,9 +2,13 @@ package IO;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class MyCompressorOutputStream extends OutputStream {
+/**
+ * class which compresses a maze according to my algorithm
+ */
+public class MyCompressorOutputStream extends OutputStream implements Serializable{
     private OutputStream out;
 
 
@@ -28,8 +32,7 @@ public class MyCompressorOutputStream extends OutputStream {
         for(int i=12;i<bytes.length;i++){
             s+=Integer.toString(bytes[i]);
         }
-        BigInteger BigInt = new BigInteger(s);
-
+        BigInteger BigInt = new BigInteger(s,2);
         String n_S = BigInt.toString();
         int count = 0;
         while(n_S.length()>count){
