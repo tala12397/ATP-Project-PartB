@@ -19,6 +19,12 @@ public class MyCompressorOutputStream extends OutputStream implements Serializab
     public void write(int b) throws IOException {
 
     }
+
+    /**
+     * compress function
+     * @param bytes array to compresss
+     * @throws IOException
+     */
     public void write(byte[] bytes) throws IOException{
         int index = 12;
         String s = "";

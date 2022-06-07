@@ -14,6 +14,13 @@ public class SimpleDecompressorInputStream extends InputStream {
     public int read()throws IOException{
         return 0;
     }
+
+    /**
+     * compress function
+     * @param new_byte is the decompress array
+     * @return -
+     * @throws IOException
+     */
     @Override
     public int read(byte [] new_byte) throws IOException {
        byte [] bytes = in.readAllBytes();

@@ -51,11 +51,11 @@ public class Configurations {
                 }
 
 
-                // get the property value and print it out
+
                 String threadPoolSize =prop.getProperty("threadPoolSize");
                 String mazeGeneratingAlgorithm = prop.getProperty("mazeGeneratingAlgorithm");
                 String mazeSearchingAlgorithm = prop.getProperty("mazeSearchingAlgorithm");
-               // result = new String[3];
+
                 result[0] = threadPoolSize;
                 result[1] = mazeGeneratingAlgorithm;
                 result[2] = mazeSearchingAlgorithm;

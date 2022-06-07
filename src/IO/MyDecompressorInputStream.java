@@ -16,6 +16,13 @@ public class MyDecompressorInputStream extends InputStream  {
     public int read()throws IOException{
         return 0;
     }
+
+    /**
+     * decompress func
+     * @param new_byte is the decompress array
+     * @return -
+     * @throws IOException
+     */
     public int read(byte [] new_byte) throws IOException {
         byte[] bytes = in.readAllBytes();
         for (int i = 0; i < 12; i++) {

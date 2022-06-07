@@ -13,6 +13,12 @@ public class SimpleCompressorOutputStream extends OutputStream  {
     public void write (int b) throws IOException{
 
     }
+
+    /**
+     * compress function
+     * @param bytes array to compress
+     * @throws IOException
+     */
     public void write(byte[] bytes) throws IOException {
         int count0 = 0;
         int count1 = 0;

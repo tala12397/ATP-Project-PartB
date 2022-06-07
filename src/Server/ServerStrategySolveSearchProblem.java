@@ -33,7 +33,6 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             ISearchingAlgorithm searcher;
             String tempDirectoryPath = System.getProperty("java.io.tmpdir");
             int hash = Arrays.hashCode(client_maze.toByteArray());
-            System.out.println(tempDirectoryPath);
             File properMaze = new File(tempDirectoryPath.concat("\\").concat(Integer.toString(hash)));
             boolean alreadySolved = properMaze.exists();
             if (alreadySolved) {
